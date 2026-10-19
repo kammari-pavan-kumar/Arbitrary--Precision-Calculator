@@ -1,0 +1,177 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------Arbitrary Precision Calculator (APC)------------------------------------------------
+Project Title : Arbitrary Precision Calculator (APC)
+Project Info  : The Arbitrary Precision Calculator is a software application designed to perform high-precision mathematical calculations.
+                it handles numbers of infinite length using Doubly Linked Lists
+                1. It supports: Basic arithmetic operations
+                2. Arbitrary precision calculations
+                3. Large integer and decimal handling
+                4. Precision control
+                5. Error-free decimal arithmetic
+                Arbitrary precision arithmetic allows calculations with very large numbers and very small decimals without losing accuracy.
+                Arithmetic Operations performed in this project are 
+                ->Addition
+                ->Subtraction
+                ->Multiplication
+                ->Division
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Sample input and output :
+
+case 1: 
+       Addition : 
+      -> Sample input  : ./a.out 20 + 40
+         Sample output : 60
+
+      -> Sample input  : ./a.out 123456789389589 + 127848935127389
+         Sample output : 251305724516978
+
+      -> Sample input  : ./a.out 9999999999999999999999999999999999999999 + 1111111111111111111111111111111111111111
+         Sample output : 11111111111111111111111111111111111111110
+
+      -> if both are operand sign is '+'  
+         then operation type is addition and sign is '+'
+      -> Sample input  : ./a.out +423 + +456
+         Sample output : 879
+
+      -> if both are operand sign is '-'  
+         then operation type is addition and sign is '-'
+      -> Sample input  : /a.out -23 + -15
+         Sample output : -38
+      -> Sample input  : ./a.out -8 + -16
+         Sample output : -24
+
+      -> if operand1 sign is '+' and operand2 sign is '-' 
+         then operation type is substraction and sign is based on larger value 
+      -> Sample input  : ./a.out +90 + -56
+         Sample output : 34
+      -> Sample input  : ./a.out +56 + -90
+         Sample output : -34
+
+      ->if operand1 sign is '-' and operand2 sign is '+' 
+         then operation type is substraction and sign is based on larger value 
+      -> Sample input  : ./a.out -123 + 23
+         Sample output : -100
+      -> Sample input  : ./a.out -23 + 123
+         Sample output : 100
+
+
+case 2: 
+       Substraction : 
+      -> Sample input  : ./a.out 40 - 20
+         Sample output : 20
+
+      -> Sample input  : ./a.out 123456789389589 + 127848935127389
+         Sample output : -4392145737800
+
+      -> Sample input  : ./a.out 9999999999999999999999999999999999999999 - 1111111111111111111111111111111111111111
+         Sample output : 8888888888888888888888888888888888888888
+
+      -> if both operand sign is '+'  
+         then operation type is substraction and sign is based on larger value
+      -> Sample input  : ./a.out +423 - +478
+         Sample output : -55
+      -> Sample input  : ./a.out +423 - +423
+         Sample output : 0
+      -> Sample input  : ./a.out +478 - +423
+         Sample output : 55
+
+      -> if both  operand sign is '-'  
+         then operation type is Substraction and sign is based on larger value
+      -> Sample input  : ./a.out -478 - -423
+         Sample output : -55
+      -> Sample input  : ./a.out -423 - -478
+         Sample output : 55
+
+      -> if operand1 sign is '+' and operand2 sign is '-' 
+         then operation type is addition and sign is '+' 
+      -> Sample input  : ./a.out 423 - -500
+         Sample output : 923
+      -> Sample input  : ./a.out 500 - -423
+         Sample output : 923
+
+      -> if operand1 sign is '-' and operand2 sign is '+' 
+         then operation type is addition and sign is '-' 
+      -> Sample input  : ./a.out -423 - 500
+         Sample output : -923
+      -> Sample input  : ./a.out -500 - 423
+         Sample output : -923
+
+
+case 3: 
+       Multiplication :
+      -> Sample input  : ./a.out 40 x 20
+         Sample output : 800
+
+      -> Sample input  : ./a.out 123456789389589 x 127848935127389
+         Sample output : 15783819057705290681265353121
+
+      -> Sample input  : ./a.out 9999999999999999999999999999999999999999 x 1111111111111111111111111111111111111111
+         Sample output : 11111111111111111111111111111111111111108888888888888888888888888888888888888889
+
+      -> if both operand have same sign than it is '+'  sign  
+      -> Sample input  : ./a.out +423 x +478
+         Sample output : 202194
+      -> Sample input  : ./a.out -423 x -478
+         Sample output : 202194
+
+      -> if both  operand have different sign then it  is '-' sign  
+         then operation type is Substraction and sign is based on larger value
+      -> Sample input  : ./a.out 23 x -24
+         Sample output : -552
+      -> Sample input  : ./a.out -24 x 23
+         Sample output : -552
+
+case 4: 
+       Division :
+      -> Sample input  : ./a.out 40 / 20
+         Sample output : 2
+      -> Sample input  : ./a.out 1000 / 10
+         Sample output : 100
+      -> Sample input  : ./a.out 40 / -20
+         Sample output : -2
+      -> Sample input  : ./a.out -40 / 20
+         Sample output : -2
+      -> Sample input  : ./a.out 423 / 0
+         Sample output : ERROR: Value can't be Divided by zero
+      -> Sample input  : ./a.out 0 / 423
+         Sample output : 0
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Errors :
+
+      -> Sample input  : ./a.out 
+         Sample output : INFO: Enter Correct Arguments
+                         INFO : Validation Failure
+
+      -> Sample input  : ./a.out -40 / 
+         Sample output : INFO: Enter Correct Arguments
+                         INFO : Validation Failure
+
+      -> Sample input  : ./a.out -40 + 67 - 
+         Sample output : INFO: Enter Correct Arguments
+                         INFO : Validation Failure
+
+      -> Sample input  : ./a.out -23 @ 45
+         Sample output : INFO: Enter Correct Arguments
+                         INFO : Validation Failure
+
+      -> Sample input  : ./a.out 423 / 0
+         Sample output : ERROR: Value can't be Divided by zero       
+
+      -> Sample input  : ./a.out -4a56 + 23
+         Sample output : INFO: Invalid number in argv[1]
+                         INFO : Validation Failure 
+
+      -> Sample input  : ./a.out 23 + 34p
+         Sample output : INFO: Invalid number in argv[3]
+                         INFO : Validation Failure                  
+
+
+             
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
